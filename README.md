@@ -34,7 +34,10 @@ Frontend :
 
 **problemes rencontrés**
 - IA : dans notre application, nous n'avons pas réussit à faire en sorte que l'IA génère des images et du textes par exemple acte etc afin d'aider l'utilisateur.
-- Trello : nous n'avons pas pu rajouté Chaimae car on a atteint le nombre de personnes maximales (gratuit autorisé) 
+- Trello : nous n'avons pas pu rajouté Chaimae car on a atteint le nombre de personnes maximales (gratuit autorisé)
+
+ **Axe d'amélioration**
+ - Design peut etre 
 
 **Démarrage rapide**
 
