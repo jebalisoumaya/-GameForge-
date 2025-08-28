@@ -1,4 +1,4 @@
-#permet d'avoir la base des pages
+#chargement de la balise static de Django pr reference nos fichiers statiques par exemple les CSS
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    #Affichage de ma navbar
-    <nav class="navbar">
+    #Affichage de ma navbar dans tt mes pages ; creation de new modeles heritant ds champs & comportement du modele 
         <a href="{% url 'home' %}" class="brand">GameForge</a>
         <div class="nav-links">
             <a href="{% url 'home' %}">Accueil</a>
+            #ici permet a l'utilisateur qui est co de voir les trucs prives 
             {% if user.is_authenticated %}
                 <a href="{% url 'create_game' %}">Créer</a>
                 <a href="{% url 'explore' %}">Exploration libre</a>
@@ -21,11 +21,13 @@
                 <a href="{% url 'favorites' %}">Favoris</a>
                 <a href="{% url 'logout' %}">Déconnexion</a>
             {% else %}
+            #l'utilisateur pr acceder aux jeux doit etre co ou creer un compte 
                 <a href="{% url 'login' %}">Connexion</a>
                 <a href="{% url 'register' %}">Inscription</a>
             {% endif %}
         </div>
     </nav>
+    #chaque page = son contenu
     <main class="container">
         #Si la commande est un succès ou échec
         {% if messages %}
@@ -35,11 +37,11 @@
                 {% endfor %}
             </div>
         {% endif %}
-        #contenu des pages
+        #contenu que les autres temlates rempliront comme home oucreate.html
         {% block content %}{% endblock %}
     </main>
     <footer class="footer">
-        
+        #Pied de page partout
         <p>TP- Projet HOFE - Django</p>
     </footer>
 </body>
