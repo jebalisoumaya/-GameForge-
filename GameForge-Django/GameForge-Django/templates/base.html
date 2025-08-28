@@ -1,3 +1,4 @@
+#permet d'avoir la base des pages
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    #Affichage de ma navbar
     <nav class="navbar">
         <a href="{% url 'home' %}" class="brand">GameForge</a>
         <div class="nav-links">
@@ -25,6 +27,7 @@
         </div>
     </nav>
     <main class="container">
+        #Si la commande est un succès ou échec
         {% if messages %}
             <div class="messages">
                 {% for message in messages %}
@@ -32,10 +35,12 @@
                 {% endfor %}
             </div>
         {% endif %}
+        #contenu des pages
         {% block content %}{% endblock %}
     </main>
     <footer class="footer">
-        <p>TP solo - Projet HOFE - Django</p>
+        
+        <p>TP- Projet HOFE - Django</p>
     </footer>
 </body>
 </html>
