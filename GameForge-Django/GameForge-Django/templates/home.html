@@ -9,8 +9,10 @@
 </form>
 #Reponse des jeux
 <div class="grid">
+    #Boucle sur games envoyer par la view de home
     {% for g in games %}
         <a href="{% url 'detail' pk=g.pk %}" class="card">
+            #si img dans environnement elle s'affiche sinon on affiche placeholder
             <div class="thumb">
                 {% if g.character_image %}
                     <img src="{{ g.character_image.url }}" alt="{{ g.title }}">
@@ -20,6 +22,7 @@
                     <div class="placeholder">Aperçu</div>
                 {% endif %}
             </div>
+            #les fonctionnalites de la carte
             <div class="card-body">
                 <h3>{{ g.title }}</h3>
                 <p>{{ g.genre }} • {{ g.created_by.username }}</p>
