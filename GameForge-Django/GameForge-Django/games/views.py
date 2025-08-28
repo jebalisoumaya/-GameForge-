@@ -21,7 +21,7 @@ def home(request):
 @login_required
 def create_game(request):
     if request.method == "POST":
-        if not DailyUsage.can_increment(request.user, limit=10):
+        if not DailyUsage.can_increment(request.user, limit=50):
             messages.error(request, "Limite quotidienne atteinte. Réessayez demain.")
             return redirect("dashboard")
         form = GamePromptForm(request.POST)
@@ -65,7 +65,7 @@ def explore(request):
         "keywords": ", ".join(random.sample(keys, k=2)),
         "references": "indie mix"
     }
-    if not DailyUsage.can_increment(request.user, limit=10):
+    if not DailyUsage.can_increment(request.user, limit=50):
         messages.error(request, "Limite quotidienne atteinte. Réessayez demain.")
         return redirect("dashboard")
     instance = GameProject.objects.create(created_by=request.user, is_public=True, **params)
