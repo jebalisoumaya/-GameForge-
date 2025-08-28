@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Jeux publics</h1>
+<form method="get" class="search-bar">
+    <input type="text" name="q" placeholder="Rechercher par titre/genre..." value="{{ q }}">
+    <button type="submit">Rechercher</button>
+</form>
+<div class="grid">
+    {% for g in games %}
+        <a href="{% url 'detail' pk=g.pk %}" class="card">
+            <div class="thumb">
+                {% if g.character_image %}
+                    <img src="{{ g.character_image.url }}" alt="{{ g.title }}">
+                {% elif g.environment_image %}
+                    <img src="{{ g.environment_image.url }}" alt="{{ g.title }}">
+                {% else %}
+                    <div class="placeholder">Aperçu</div>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <h3>{{ g.title }}</h3>
+                <p>{{ g.genre }} • {{ g.created_by.username }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>Aucun jeu pour le moment.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Mes favoris</h1>
+<div class="grid">
+    {% for f in favs %}
+        <a class="card" href="{% url 'detail' pk=f.game.pk %}">
+            <div class="card-body">
+                <h3>{{ f.game.title }}</h3>
+                <p>{{ f.game.genre }} • par {{ f.game.created_by.username }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>Aucun favori.</p>
+    {% endfor %}
+</div>
+{% endblock %}

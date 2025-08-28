@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="detail">
+    <div class="detail-head">
+        <h1>{{ game.title }}</h1>
+        <div class="meta">{{ game.genre }} • par {{ game.created_by.username }} • {{ game.created_at|date:"d/m/Y H:i" }}</div>
+        <div class="actions">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'toggle_favorite' pk=game.pk %}" style="display:inline">{% csrf_token %}<button>⭐ Favori</button></form>
+                {% if user == game.created_by %}
+                    <form method="post" action="{% url 'toggle_visibility' pk=game.pk %}" style="display:inline">{% csrf_token %}<button>Basculer Public/Privé</button></form>
+                    <a class="btn" href="{% url 'export_pdf' pk=game.pk %}">Exporter PDF</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="images">
+        {% if game.character_image %}<img src="{{ game.character_image.url }}" alt="Personnage">{% endif %}
+        {% if game.environment_image %}<img src="{{ game.environment_image.url }}" alt="Environnement">{% endif %}
+    </div>
+    <section>
+        <h2>Univers</h2>
+        <p style="white-space:pre-line">{{ game.universe_text }}</p>
+    </section>
+    <section>
+        <h2>Scénario</h2>
+        <h3>Acte I</h3><p style="white-space:pre-line">{{ game.story_act1 }}</p>
+        <h3>Acte II</h3><p style="white-space:pre-line">{{ game.story_act2 }}</p>
+        <h3>Acte III</h3><p style="white-space:pre-line">{{ game.story_act3 }}</p>
+        <h3>Twist</h3><p style="white-space:pre-line">{{ game.story_twist }}</p>
+    </section>
+    <section>
+        <h2>Personnages</h2>
+        <ul>
+            {% for c in game.characters %}<li>{{ c }}</li>{% empty %}<li>--</li>{% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Lieux</h2>
+        <ul>
+            {% for l in game.locations %}<li>{{ l }}</li>{% empty %}<li>--</li>{% endfor %}
+        </ul>
+    </section>
+</div>
+{% endblock %}

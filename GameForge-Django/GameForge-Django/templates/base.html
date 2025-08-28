@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameForge</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="brand">GameForge</a>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Accueil</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'create_game' %}">Créer</a>
+                <a href="{% url 'explore' %}">Exploration libre</a>
+                <a href="{% url 'dashboard' %}">Tableau de bord</a>
+                <a href="{% url 'favorites' %}">Favoris</a>
+                <a href="{% url 'logout' %}">Déconnexion</a>
+            {% else %}
+                <a href="{% url 'login' %}">Connexion</a>
+                <a href="{% url 'register' %}">Inscription</a>
+            {% endif %}
+        </div>
+    </nav>
+    <main class="container">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="msg {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <p>TP solo - Projet HOFE - Django</p>
+    </footer>
+</body>
+</html>

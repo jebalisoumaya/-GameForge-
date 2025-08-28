@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Mon tableau de bord</h1>
+<div class="grid">
+    {% for g in games %}
+        <a class="card" href="{% url 'detail' pk=g.pk %}">
+            <div class="card-body">
+                <h3>{{ g.title }}</h3>
+                <p>{{ g.genre }} • {{ g.created_at|date:"d/m/Y H:i" }} • {{ g.is_public|yesno:"Public,Privé" }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>Pas encore de jeux.</p>
+    {% endfor %}
+</div>
+{% endblock %}
