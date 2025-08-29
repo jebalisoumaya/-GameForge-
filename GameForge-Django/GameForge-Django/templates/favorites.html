@@ -1,12 +1,15 @@
+{#liste de jeux favoris#}
+#Balise template django 
 {% extends 'base.html' %}
 {% block content %}
 <h1>Mes favoris</h1>
 <div class="grid">
+    {# Parcours de la liste des fav de l’utilisateur + si jeu present dans la bd#}
     {% for f in favs %}
         <a class="card" href="{% url 'detail' pk=f.game.pk %}">
             <div class="card-body">
                 <h3>{{ f.game.title }}</h3>
-                <p>{{ f.game.genre }} • par {{ f.game.created_by.username }}</p>
+                <p>{{ f.game.genre }} par {{ f.game.created_by.username }}</p>
             </div>
         </a>
     {% empty %}
