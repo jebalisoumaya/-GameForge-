@@ -11,7 +11,7 @@
             {#Info sur le jeu complet#}
             <div class="card-body">
                 <h3>{{ g.title }}</h3>
-                <p>{{ g.genre }} • {{ g.created_at|date:"d/m/Y H:i" }} • {{ g.is_public|yesno:"Public,Privé" }}</p>
+                <p>{{ g.genre }} par {{ g.created_at|date:"d/m/Y H:i" }} par {{ g.is_public|yesno:"Public,Privé" }}</p>
             </div>
         </a>
     {% empty %}
