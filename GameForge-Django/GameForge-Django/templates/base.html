@@ -1,4 +1,4 @@
-#chargement de la balise static de Django pr reference nos fichiers statiques par exemple les CSS
+{#chargement de la balise static de Django pr reference nos fichiers statiques par exemple les CSS}
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    #Affichage de ma navbar dans tt mes pages ; creation de new modeles heritant ds champs & comportement du modele 
+    {#Affichage de ma navbar dans tt mes pages ; creation de new modeles heritant ds champs & comportement du modele} 
         <a href="{% url 'home' %}" class="brand">GameForge</a>
         <div class="nav-links">
             <a href="{% url 'home' %}">Accueil</a>
