@@ -1,8 +1,8 @@
-#Page d'accueil qui va nous permettre de faire des recherches & voir les jeux qui sont en mode publics
+{#Page d'accueil qui va nous permettre de faire des recherches & voir les jeux qui sont en mode publics}
 {% extends 'base.html' %}
 {% block content %}
 <h1>Jeux publics</h1>
-#GET barre de recherche, permet lors de la selection d'un mot de filtrer dans le serveur 
+{#GET barre de recherche, permet lors de la selection d'un mot de filtrer dans le serveur#} 
 <form method="get" class="search-bar">
     <input type="text" name="q" placeholder="Rechercher par titre/genre..." value="{{ q }}">
     <button type="submit">Rechercher</button>
