@@ -4,13 +4,15 @@
 <div class="detail">
     <div class="detail-head">
         <h1>{{ game.title }}</h1>
-        <div class="meta">{{ game.genre }} • par {{ game.created_by.username }} • {{ game.created_at|date:"d/m/Y H:i" }}</div>
+        <div class="meta">{{ game.genre }} par {{ game.created_by.username }}  {{ game.created_at|date:"d/m/Y H:i" }}</div>
+        {#action possible et visible si coonecte#}
         <div class="actions">
             {% if user.is_authenticated %}
                 <form method="post" action="{% url 'toggle_favorite' pk=game.pk %}" style="display:inline">{% csrf_token %}<button>⭐ Favori</button></form>
+            {#pr exporter en pdf ou le statut du jeu publi/ ou pv c possible que par le createur du jeu#}
                 {% if user == game.created_by %}
                     <form method="post" action="{% url 'toggle_visibility' pk=game.pk %}" style="display:inline">{% csrf_token %}<button>Basculer Public/Privé</button></form>
-                    <a class="btn" href="{% url 'export_pdf' pk=game.pk %}">Exporter PDF</a>
+                    <a class="btn" href="{% url 'export_pdf' pk=game.pk %}">Exporter PDF</a> 
                 {% endif %}
             {% endif %}
         </div>
