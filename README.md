@@ -7,6 +7,26 @@
 
 GameForge est une application web Django qui génère automatiquement des concepts complets de jeux vidéo grâce à l'intelligence artificielle. Les utilisateurs peuvent créer des projets de jeu détaillés avec scénarios, personnages, lieux et concept art via une interface web intuitive.
 
+
+**Collaboration et organisation du travail**
+
+Bien que nous ayons réparti les tâches entre les membres de l’équipe (backend : Souhir, Chaimae et Soumaya ; frontend : Hoda), nous avons travaillé de manière collaborative tout au long du projet. Certaines personnes ont rencontré des difficultés techniques, notamment des problèmes de connexion à GitHub sur leur ordinateur. Pour contourner cela, nous avons partagé notre code et nos fichiers sous forme de dossiers compressés (ZIP) et nous les avons testés au fur et à mesure ensemble. 
+
+Ainsi, même si nous n’avons pas créé chacune une branche distincte sur Git, nous avons échangé régulièrement nos parties respectives, intégré et testé le code collectivement. Cela nous a permis de progresser de façon collaborative, de résoudre ensemble les problèmes rencontrés et d’assurer la cohérence du projet final. 
+
+Nous avons également utilisé Trello pour organiser les tâches, suivre l’avancement du projet et assurer une meilleure coordination entre les membres. (sur Teams aussi) 
+
+Lien pour le Trello : https://trello.com/invite/b/68b0239667a6d3495e8b5d62/ATTIa0e3b19eab4a6783129e4b2de49f4431AF42A20A/gameforgedjango-m1-touil 
+
+<img width="1910" height="997" alt="image" src="https://github.com/user-attachments/assets/1b5fd45a-9f71-463d-bd4d-afd2db151756" />
+
+
+<img width="1910" height="997" alt="image" src="https://github.com/user-attachments/assets/4ccc5867-8308-4b14-858d-26f4d315843e" />
+
+
+
+
+
 **Fonctionnalités**
 
 - Génération IA : Création automatique d’univers de jeu, scénarios, personnages et lieux grâce aux modèles Hugging Face.  
@@ -31,20 +51,6 @@ Frontend :
 - Static Assets (static/) : CSS personnalisé avec thème sombre pour gamers.  
 - Responsive Design : Approche mobile-first avec CSS Grid.
 
-**Collaboration et organisation du travail**
-
-Bien que nous ayons réparti les tâches entre les membres de l’équipe (backend : Souhir, Chaimae et Soumaya ; frontend : Hoda), nous avons travaillé de manière collaborative tout au long du projet. Certaines personnes ont rencontré des difficultés techniques, notamment des problèmes de connexion à GitHub sur leur ordinateur. Pour contourner cela, nous avons partagé notre code et nos fichiers sous forme de dossiers compressés (ZIP) et nous les avons testés au fur et à mesure ensemble. 
-
-Ainsi, même si nous n’avons pas créé chacune une branche distincte sur Git, nous avons échangé régulièrement nos parties respectives, intégré et testé le code collectivement. Cela nous a permis de progresser de façon collaborative, de résoudre ensemble les problèmes rencontrés et d’assurer la cohérence du projet final. 
-
-Nous avons également utilisé Trello pour organiser les tâches, suivre l’avancement du projet et assurer une meilleure coordination entre les membres. (sur Teams aussi) 
-
-Lien pour le Trello : https://trello.com/invite/b/68b0239667a6d3495e8b5d62/ATTIa0e3b19eab4a6783129e4b2de49f4431AF42A20A/gameforgedjango-m1-touil 
-
-<img width="1910" height="997" alt="image" src="https://github.com/user-attachments/assets/1b5fd45a-9f71-463d-bd4d-afd2db151756" />
-
-
-<img width="1910" height="997" alt="image" src="https://github.com/user-attachments/assets/4ccc5867-8308-4b14-858d-26f4d315843e" />
 
 
 
