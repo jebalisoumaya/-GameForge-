@@ -1,10 +1,11 @@
-#Création du jeu avec le titre, genre ambiance, mots-clés, références - partie generation by the AI
+{#Création du jeu avec le titre, genre ambiance, mots-clés, références - partie generation by the AI (pas reussit ca)#}
 {% extends 'base.html' %}
 {% block content %}
 <h1>Créer un jeu</h1>
 <form method="post">
-    {% csrf_token %}
+    {% csrf_token %}  {#token pr secruite#} 
     {{ form.as_p }}
+     {#ici la vue recoit les donnes, valide, sauvegarde et affiche les details#} 
     <button type="submit">Générer</button>
 </form>
 {% endblock %}
