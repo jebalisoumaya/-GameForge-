@@ -1,9 +1,14 @@
+{#Liste des jeux créer par moi si je suis co, on a ces donnees grace a view+ permet de distinguer entre j.public ou privee#}
+
 {% extends 'base.html' %}
 {% block content %}
+{#Titre de notre page#}
 <h1>Mon tableau de bord</h1>
-<div class="grid">
+<div class="grid"> {#1 carte 1 jeu#}
     {% for g in games %}
-        <a class="card" href="{% url 'detail' pk=g.pk %}">
+    {#connection entre les jeux & leurs infos completes #}
+        <a class="card" href="{% url 'detail' pk=g.pk %}"> 
+            {#Info sur le jeu complet#}
             <div class="card-body">
                 <h3>{{ g.title }}</h3>
                 <p>{{ g.genre }} • {{ g.created_at|date:"d/m/Y H:i" }} • {{ g.is_public|yesno:"Public,Privé" }}</p>
